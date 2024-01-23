@@ -1,0 +1,270 @@
+
+/* Establece el color de fondo para el cuerpo de la página */
+body{
+  background-color: #FFB17A;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+width: 100%;
+height: 15%;
+background-color: #FFC79F;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* Estilos para el menú superior */
+.mainMenu-top{
+  display: flex;
+  background-color: #4F4789;
+  width: 98vw;
+  height:48vh;
+  margin: auto auto;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  border: 1px;
+  border-color: #363636;
+  border-radius: 20px 20px 0px 0px;
+  
+}
+/* Estilos para el menú inferior */
+.mainMenu-bot{
+  display: flex;
+  background-color: #4F4789;
+  width: 98vw;
+  height: 48vh;
+  margin: auto auto;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  border: 1px;
+  border-color:#363636;
+  border-radius: 0px 0px 20px 20px;
+  
+}
+/* Estilos para el contenedor de la caja */
+.menuContainer{
+  position: relative;
+  width: 98vw;
+  height: 96vh;
+  background: #363636;
+  overflow: hidden;
+  z-index: 0;
+  padding: 0.2% 0.2% 0.2% 0.2%;
+  border: 1px;
+  border-color:#363636;
+  border-radius: 20px;
+  
+  
+}
+/* Efecto de gradiente para la caja antes de */
+.menuContainer::before{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 98%;
+  height: 100%;
+  background: linear-gradient(0deg,transparent, transparent, #51aafd,#51aafd,#51aafd);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  overflow: hidden;
+}
+/* Efecto de gradiente para la caja después de */
+.menuContainer::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 98%;
+  height: 100%;
+  background: linear-gradient(0deg,transparent, transparent, #b42e97,#b42e97,#b42e97);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  overflow: hidden;
+  animation-delay: -8.7s;
+}
+/* Oculta las barras de desplazamiento de WebKit */
+::-webkit-scrollbar {
+  display: none;
+}
+/* Animación para rotar */
+@keyframes animate{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+/* Estilo de interacción al pasar el cursor por el botón del menú */
+.ButtonMenu:hover .butHover{
+  fill: #A4D8FB;
+}
+/* Estilos para el contenido del ícono */
+.iconContent{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  border: 1;
+  border-color:#363636;
+  border-radius: 20px;
+}
+
+.playContainer{
+  background-image: url("imagesPng/backgroundElementImg.png"); /* Set the path to your image */
+      background-size: contain;
+      background-repeat: repeat;
+      width: 100vw;
+      height: 100vh;
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 650px */
+@media (max-width: 650px) {
+ 
+  .body{
+    width: 100vw;
+    height: 100vh;
+  }
+  .menuContainer{
+    padding: 1% 1% 1% 1%;
+    height: 100vh;
+    width: 95vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-gap: 0px;
+    text-align: center;
+  }
+  .menuContainer > div{
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%; /* Ocupar el 100% de la altura del contenedor */
+      box-sizing: border-box; /* Considerar el borde en el tamaño total */
+  } 
+ 
+  .mainMenu-bot{
+    width: 95%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+  }
+  .mainMenu-top{
+    width: 95%;
+    height: 95%;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .iconContent{
+    border: 0px;
+    height: 100%;
+    width: 70%;
+    
+  }
+
+ 
+  
+  
+  
+  }
+  
+    @media (max-width: 650px) and (max-height: 900px) {
+      .body{
+        width: 100vw;
+        height: 100vh;
+      }
+      .menuContainer{
+        height: 100vh;
+        width: 95vw;
+      }
+      .mainMenu-bot{
+        width: 95%;
+        height: 95%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .mainMenu-top{
+        width: 95%;
+        height: 95%;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .mainMenu-top > .iconContent{
+        height: 60%;
+        width: 60%;
+      }
+      .iconContent{
+        
+        height: 100%;
+        width: 70%;
+        
+      }
+      
+      
+      }
+  @media (prefers-color-scheme: dark) {
+    .ButtonMenu:hover .butHover{
+      fill: #72c2f7;
+    }
+    .mainMenu-bot{
+      background-color: black;
+    }
+    .mainMenu-top{
+      background-color: black;
+    }
+  }
+/*
+@media (max-width: 1250px) {
+.logo {
+  height: 10em;
+}
+}
+*/
+/*
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+*/
+
+/* Estilos para la imagen GIF */
+
+
+
+/*
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+*/
