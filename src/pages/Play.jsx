@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../components/Header';
-
+import frontPageImg from '../imagesPng/frontPageImg.png'
 export const Play = () => {
   return (
     <div className='playContainer'>
       <Header/>
-        <p>hola</p>
+      <div className='imageContainer'>
+      <img className='frontPageImg' src={frontPageImg}></img>
+      </div>
     </div>
   )
 }
