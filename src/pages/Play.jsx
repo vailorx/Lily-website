@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import frontPageImg from '../imagesPng/frontPageImg.png'
 import addBut from '../imagesGif/addBut.gif'
 import galeryBut from '../imagesGif/galeryBut.gif'
+import waves from '../imagesPng/waves.png'
+import FormContent from '../components/FormContent';
 export const Play = () => {
   return (
     <div className='playContainer'>
@@ -18,6 +20,12 @@ export const Play = () => {
         <img className='fillFixedButton' src={galeryBut}></img>
       </div>
       </div>
+      <div className='waves'>
+      <img className='ogWaves' src={waves}/>
+      </div>
+      <FormContent classN={"formAnimal"}/>
+
+
       
       
     </div>
