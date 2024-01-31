@@ -4,7 +4,9 @@ import frontPageImg from '../imagesPng/frontPageImg.png'
 import addBut from '../imagesGif/addBut.gif'
 import galeryBut from '../imagesGif/galeryBut.gif'
 import waves from '../imagesPng/waves.png'
-import FormContent from '../components/FormContent';
+import flippedWaves from '../imagesPng/flippedWaves.png'
+import FormContent from '../components/FormContent.jsx';
+
 export const Play = () => {
   return (
     <div className='playContainer'>
@@ -21,10 +23,12 @@ export const Play = () => {
       </div>
       </div>
       <div className='waves'>
-      <img className='ogWaves' src={waves}/>
+      <img className='wavesImg' src={waves}/>
       </div>
       <FormContent classN={"formAnimal"}/>
-
+      <div className='waves'>
+      <img className='wavesImg' src={flippedWaves}/>
+      </div>
 
       
       

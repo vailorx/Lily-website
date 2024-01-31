@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const formContent = ({classN}) => {
+export const FormContent = ({classN}) => {
    
   return (
     <div className={classN} >
@@ -8,4 +8,4 @@ export const formContent = ({classN}) => {
     </div>
   )
 }
-export default formContent;
+export default FormContent;
