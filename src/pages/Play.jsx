@@ -26,6 +26,7 @@ export const Play = () => {
       <img className='wavesImg' src={waves}/>
       </div>
       <FormContent classN={"formAnimal"}/>
+      
       <div className='waves'>
       <img className='wavesImg' src={flippedWaves}/>
       </div>
