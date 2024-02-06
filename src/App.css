@@ -10,6 +10,26 @@ body{
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #1c00f3 #FFB17A;
+}
+body::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4F4789; /* Color del "pulgón" de la barra */
+  border-radius: 6px; /* Bordes redondeados del "pulgón" */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #FFB17A; /* Color del fondo de la barra de desplazamiento */
+}
+
+/* Estilo del borde de la barra de desplazamiento */
+body::-webkit-scrollbar-track-piece {
+  border: 2px solid #4F4789; /* Color y grosor del borde */
 }
 .header{
 width: 100%;
@@ -173,18 +193,126 @@ justify-content: center;
   width: 100%;
   height: 100%;
 }
-.formAnimal{
-  width: 100%;
-  height: 30%;
-  background-color:#98d6ff;
-}
 .waves{
   width: 100%;
-  height:50%;
+  height:25%;
+  margin: 0px;
+  padding: 0px;
 }
 .wavesImg{
   width: 100%;
   height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+.formAnimal{
+  width: 100vw;
+  height: 100vh;
+  background-color:#98d6ff;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+.panel{
+  width: 85%;
+  height: 100vh;
+  padding: 20px 10px;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 10px; 
+  justify-content: center;
+  background-color: #FFB17A;
+  border-radius: 10% 10%;
+  overflow:hidden;
+  
+}
+.panel::-webkit-scrollbar {
+  width: 12px;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.panel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.lilyImgContent{
+ 
+  margin: 0px auto 0px auto;
+  width: 50vw;
+  height: 100vh;
+  max-height: 65vh;
+  
+}
+.lilyImg{
+  width: 100%;
+  height: 100%;
+}
+.infoLilyTitle{
+  font: 2em sans-serif;
+  color: white;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.infoLilyContent{
+  font: 2em sans-serif;
+  color: white;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.infoLilyContent > label{
+  display: block;
+  background-color: #98d6ff;
+  padding: 15px;
+  margin-top: auto;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  font-style: italic;
+}
+.accordion ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accordion li {
+  margin-bottom: 10px;
+}
+
+.accordion input[type="checkbox"] {
+  display: none;
+}
+
+.accordion label {
+  display: block;
+  padding: 10px;
+  background-color: #98d6ff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+.accordion .content {
+  max-height: 0px;
+  overflow: auto;
+  transition: max-height 0.5s ease-out;
+  margin: 5px 5px 5px 5px;
+}
+
+.accordion input[type="checkbox"]:checked + label + .content {
+  max-height: none; /* Ajusta el valor según sea necesario */
+ 
 }
 
 /* Estilos responsivos para pantallas con un ancho máximo de 650px */
@@ -235,6 +363,11 @@ justify-content: center;
     width: 70%;
     
   }
+  .lilyImgContent{
+    margin: 0px auto 0px auto;
+    width: 80%;
+    height: 50%;
+  }
   
   
   }
@@ -276,7 +409,11 @@ justify-content: center;
       #fixedButton {
         width: 14vw;
       }
-      
+      .lilyImgContent{
+        margin: 0px auto 0px auto;
+        width: 80%;
+        height: 50%;
+      }
       
       }
       @media only screen and (min-width: calc(300px + 350px)) and (min-height: 350px) {
@@ -288,6 +425,11 @@ justify-content: center;
           width: 5vw;
         }
         
+        .lilyImgContent{
+          margin: 0px auto 0px auto;
+          width: 50%;
+          height: 60%;
+        }
       }
       @media only screen and (min-width: 1000px){
         .frontPageImg{
@@ -297,11 +439,27 @@ justify-content: center;
         #fixedButton{
           height: 8%;
         }
-        
+        .lilyImgContent{
+       
+          margin: 0px auto 0px auto;
+          width: 50%;
+          height: 60%;
+        }
 
       }
-      
-     
+    @media (max-width: 366px){
+      .infoLilyContent > span{
+        font: 0.5em sans-serif;
+      }
+    }
+     @media only screen and (min-width:460px) and (max-width:100px){
+      .lilyImgContent{
+       
+        margin: 0px auto 0px auto;
+        width: 100%;
+        height: 60%;
+      }
+     }
   @media (prefers-color-scheme: dark) {
     .ButtonMenu:hover .butHover{
       fill: #72c2f7;
