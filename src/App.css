@@ -224,7 +224,7 @@ justify-content: center;
   background-color: #FFB17A;
   border-radius: 10% 10%;
   overflow:hidden;
-  
+}
 
 .panel::-webkit-scrollbar {
   width: 12px;
