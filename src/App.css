@@ -225,7 +225,7 @@ justify-content: center;
   border-radius: 10% 10%;
   overflow:hidden;
   
-}
+
 .panel::-webkit-scrollbar {
   width: 12px;
 }
@@ -239,6 +239,7 @@ justify-content: center;
   background-color: transparent;
 }
 
+
 .lilyImgContent{
  
   margin: 0px auto 0px auto;
@@ -246,6 +247,7 @@ justify-content: center;
   height: 100vh;
   max-height: 65vh;
   
+
 }
 .lilyImg{
   width: 100%;
@@ -312,7 +314,7 @@ justify-content: center;
 
 .accordion input[type="checkbox"]:checked + label + .content {
   max-height: none; /* Ajusta el valor según sea necesario */
- 
+
 }
 
 /* Estilos responsivos para pantallas con un ancho máximo de 650px */

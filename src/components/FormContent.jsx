@@ -40,6 +40,7 @@ export const FormContent = ({classN}) => {
   return (
     <div className={classN}   style={{height: (!accordion ? (containerHeight - 100) : containerHeight + 100) + 'px',maxHeight: (containerHeight +accordionHeight  ) + 'px', transition: 'height 0.6s ease',}}>
        <div className='panel'  ref={containerRef} style={{height: (containerHeight +accordionHeight ) + 'px', maxHeight: (containerHeight +accordionHeight ) + 'px', transition: 'height 0.3s ease'}}>
+
         <div className='infoLilyTitle'>
           <h3>Lily</h3>
         </div>
