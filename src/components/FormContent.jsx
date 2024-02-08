@@ -1,45 +1,25 @@
 import React from 'react'
 import confusedLi from "../imagesPng/confusedLi.jpg";
 import { useRef, useState, useEffect  } from 'react';
+import { useAccordionContainer } from '../hooks/useAccordionContainer';
 export const FormContent = ({classN}) => {  
- 
   const [containerHeight, setContainerHeight] = useState('100%');
-  const [starterHeight, setStarterHeight] = useState('0px');
   const [accordionHeight, setAccordionHeight] = useState('0');
+  const [starterHeight, setStarterHeight] = useState('0px');
   const [accordion, setAccordion] = useState(false);
   const containerRef = useRef(null);
   const accordionText = useRef(null);
-
+  
+  const modifiesHeight = useAccordionContainer(containerRef, accordionText, starterHeight, accordion, setContainerHeight, setAccordionHeight, setStarterHeight);
  
-
-  useEffect(() => {
-    const heightContainer = containerRef.current.scrollHeight;
-    setStarterHeight(heightContainer);
-  }, []);
-
   useEffect(() => {
     // Update the container height when the component mounts or when new elements are added
-   
-    updateContainerHeight();
+    modifiesHeight();
   }, [accordion]);
 
-  const updateContainerHeight = () => {
-    const heightContainer = containerRef.current.scrollHeight;
-    const heightAccordion = accordionText.current.scrollHeight;
-    
-    if(accordion === false){
-      setAccordionHeight(0);
-      setContainerHeight(starterHeight);
-    }else{
-      setAccordionHeight(heightAccordion);
-      setContainerHeight(heightContainer);
-    }
-    
-  };
-
   return (
-    <div className={classN}   style={{height: (!accordion ? (containerHeight - 100) : containerHeight + 100) + 'px',maxHeight: (containerHeight +accordionHeight  ) + 'px', transition: 'height 0.6s ease',}}>
-       <div className='panel'  ref={containerRef} style={{height: (containerHeight +accordionHeight ) + 'px', maxHeight: (containerHeight +accordionHeight ) + 'px', transition: 'height 0.3s ease'}}>
+    <div className={classN}   style={{height: (!accordion ? (containerHeight - 100) : containerHeight + 100) + 'px',maxHeight: (containerHeight + accordionHeight  ) + 'px', transition: 'height 0.6s ease',}}>
+       <div className='panel'  ref={containerRef} style={{height: (containerHeight + accordionHeight ) + 'px', maxHeight: (containerHeight + accordionHeight ) + 'px', transition: 'height 0.3s ease'}}>
 
         <div className='infoLilyTitle'>
           <h3>Lily</h3>
