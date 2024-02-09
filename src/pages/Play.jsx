@@ -6,6 +6,7 @@ import galeryBut from '../imagesGif/galeryBut.gif'
 import waves from '../imagesPng/waves.png'
 import flippedWaves from '../imagesPng/flippedWaves.png'
 import LilysInfo from '../components/LilysInfo.jsx';
+import FormBut from '../components/FormBut.jsx';
 
 export const Play = () => {
   return (
@@ -30,6 +31,11 @@ export const Play = () => {
       <div className='waves'>
       <img className='wavesImg' src={flippedWaves}/>
       </div>
+      <div className='divFormBut'>
+      <FormBut formName={"Español"}/>
+      <FormBut formName={"Ingles"}/>
+      </div>
+      
 
       
       

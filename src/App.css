@@ -316,7 +316,46 @@ justify-content: center;
   max-height: none; /* Ajusta el valor según sea necesario */
 
 }
-
+.divFormBut{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.formBut{
+  width: 50%;
+  height: 80%;
+  background-color: #51aafd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.formBut > div{
+  width: 95%;
+  height: 70%;
+  background-color: #98d6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.formBut > div > p {
+  color: white;
+  font-size: 20px;
+  transition: font-size 0.3s ease-in-out;
+}
+.formBut:hover > div > p{
+  color: white;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+.formBut:hover{
+  height: 100%;
+}
 /* Estilos responsivos para pantallas con un ancho máximo de 650px */
 @media (max-width: 650px) {
  
