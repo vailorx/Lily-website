@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const useShowPanels = (panelName, formName, setNumClicks, numClicks) => {
+export const usePanelsDisplay = (panelName, formName, setNumClicks, numClicks) => {
   function changeFormName(){
     panelName(formName);
     setNumClicks(numClicks + 1);
