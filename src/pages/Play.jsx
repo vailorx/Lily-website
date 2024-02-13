@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header';
 import frontPageImg from '../imagesPng/frontPageImg.png'
 import addBut from '../imagesGif/addBut.gif'
@@ -9,6 +9,12 @@ import LilysInfo from '../components/LilysInfo.jsx';
 import FormBut from '../components/FormBut.jsx';
 
 export const Play = () => {
+  const [panel, setPanel] = useState("def");
+  const changePanel = (butName) => {
+    setPanel(butName);
+    console.log(panel)
+    
+  }
   return (
     <div className='playContainer'>
       <Header/>
@@ -31,9 +37,12 @@ export const Play = () => {
       <div className='waves'>
       <img className='wavesImg' src={flippedWaves}/>
       </div>
+      
+          
       <div className='divFormBut'>
-      <FormBut formName={"Español"}/>
-      <FormBut formName={"Ingles"}/>
+      <FormBut formName={"Español"} panelName={changePanel} panel={panel}/>
+      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel}/>
+      
       </div>
       
 

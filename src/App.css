@@ -347,6 +347,8 @@ justify-content: center;
   color: white;
   font-size: 20px;
   transition: font-size 0.3s ease-in-out;
+  user-select: none;
+  
 }
 .formBut:hover > div > p{
   color: white;
