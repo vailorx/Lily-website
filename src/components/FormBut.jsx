@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { usePanelsDisplay } from '../hooks/usePanelsDisplay';
 
-export const FormBut = ({formName, panelName, panel}) => {
+export const FormBut = ({formName, panelName, panel, setFormName}) => {
   const [numClicks, setNumClicks] = useState(0);
-  const {changeFormName} = usePanelsDisplay(panelName, formName, setNumClicks, numClicks);
+  const {changeFormName} = usePanelsDisplay(panelName, formName, setNumClicks, numClicks, setFormName);
   
   return (
     <div className='formBut' style={{

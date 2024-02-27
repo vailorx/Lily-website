@@ -7,12 +7,13 @@ import waves from '../imagesPng/waves.png'
 import flippedWaves from '../imagesPng/flippedWaves.png'
 import LilysInfo from '../components/LilysInfo.jsx';
 import FormBut from '../components/FormBut.jsx';
+import { FormPanel } from '../components/FormPanel.jsx';
 
 export const Play = () => {
   const [panel, setPanel] = useState("def");
+  const [formName, setFormName] = useState("def");
   const changePanel = (butName) => {
     setPanel(butName);
-    console.log(panel)
     
   }
   return (
@@ -40,10 +41,11 @@ export const Play = () => {
       
           
       <div className='divFormBut'>
-      <FormBut formName={"Español"} panelName={changePanel} panel={panel}/>
-      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel}/>
+      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName}/>
+      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName}/>
       
       </div>
+      <FormPanel panel={panel} formName={formName}/>
       
 
       

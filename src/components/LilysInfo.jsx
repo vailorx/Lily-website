@@ -2,7 +2,7 @@ import React from 'react'
 import confusedLi from "../imagesPng/confusedLi.jpg";
 import { useRef, useState, useEffect  } from 'react';
 import { useAccordionContainer } from '../hooks/useAccordionContainer';
-export const FormContent = ({classN}) => {  
+export const LilysInfo = ({classN}) => {  
   const [containerHeight, setContainerHeight] = useState('100%');
   const [accordionHeight, setAccordionHeight] = useState('0');
   const [starterHeight, setStarterHeight] = useState('0px');
@@ -28,6 +28,7 @@ export const FormContent = ({classN}) => {
         <img className='lilyImg' src={confusedLi}/>
        </div>
        <div className='infoLilyContent'>
+
 <div className="accordion" >
   <ul>
     <li>
@@ -50,4 +51,4 @@ export const FormContent = ({classN}) => {
     </div>
   )
 }
-export default FormContent;
+export default LilysInfo;

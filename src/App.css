@@ -12,7 +12,7 @@ body{
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #1c00f3 #FFB17A;
+
 }
 body::-webkit-scrollbar {
   width: 12px; /* Ancho de la barra de desplazamiento */
@@ -358,6 +358,35 @@ justify-content: center;
 .formBut:hover{
   height: 100%;
 }
+.formPanel{
+  min-height: 100%;
+  width: 100%;
+  background-color: #98d6ff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.formPanelSpace{
+  width: 100%;
+  height: 20%;
+  margin: 10px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+}
+.formImgContent{
+  margin-top: 20px;
+  width: 100%;
+  height: 70%;
+}
+.formImg{
+  width: 100%;
+  height: 100%;
+}
+
 /* Estilos responsivos para pantallas con un ancho máximo de 650px */
 @media (max-width: 650px) {
  
@@ -458,6 +487,7 @@ justify-content: center;
         height: 50%;
       }
       
+      
       }
       @media only screen and (min-width: calc(300px + 350px)) and (min-height: 350px) {
         .frontPageImg{
@@ -473,6 +503,11 @@ justify-content: center;
           width: 50%;
           height: 60%;
         }
+        .formPanelSpace{
+          height: 30%;
+          width: 40%;
+        }
+       
       }
       @media only screen and (min-width: 1000px){
         .frontPageImg{
@@ -488,6 +523,11 @@ justify-content: center;
           width: 50%;
           height: 60%;
         }
+        .formPanelSpace{
+          height: 35%;
+          width: 30%;
+        }
+        
 
       }
     @media (max-width: 366px){
