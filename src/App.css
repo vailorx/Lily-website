@@ -283,6 +283,15 @@ justify-content: center;
   border-radius: 50%;
   font-style: italic;
 }
+.lilySay{
+  font: 2em sans-serif;
+  margin: 20px;
+  color: white;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  
+}
 .accordion ul {
   list-style: none;
   padding: 0;

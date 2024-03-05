@@ -12,6 +12,8 @@ import { FormPanel } from '../components/FormPanel.jsx';
 export const Play = () => {
   const [panel, setPanel] = useState("def");
   const [formName, setFormName] = useState("def");
+  const [inputValuesE, setInputValuesE] = useState({});
+    const [inputValuesS, setInputValuesS] = useState({});
   const changePanel = (butName) => {
     setPanel(butName);
     
@@ -41,11 +43,11 @@ export const Play = () => {
       
           
       <div className='divFormBut'>
-      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName}/>
-      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName}/>
+      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
+      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
       
       </div>
-      <FormPanel panel={panel} formName={formName}/>
+      <FormPanel panel={panel} formName={formName} inputValuesE={inputValuesE} inputValuesS={inputValuesS} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
       
 
       

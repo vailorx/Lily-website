@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 export const useAccordionContainer = (containerHeight, accordionHeight, starterMainContainer, accordion, setContainerHeight, setAccordionHeight, setStarterHeight) => {
     
     function modifiesHeight () {
