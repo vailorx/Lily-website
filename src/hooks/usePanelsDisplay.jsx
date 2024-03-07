@@ -16,10 +16,10 @@ export const usePanelsDisplay = (panelName, formName, setNumClicks, numClicks, s
       panelName("def");
     }
   }
-  
+ 
     
   
   
-    return { changeFormName, changeFormNameDefault };
+    return { changeFormName, changeFormNameDefault};
   
 };

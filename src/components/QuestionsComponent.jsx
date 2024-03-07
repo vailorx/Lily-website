@@ -17,6 +17,7 @@ return(
     <div className='formPanelSpace'>
         {changeQuestions(formName)}
         <button onClick={checkSpanishValues}>Verificar</button>
+        
         {confettiActive && <ConfettiExplosion 
           particleCount={1000} 
           height={4000}  

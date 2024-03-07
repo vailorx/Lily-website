@@ -13,7 +13,7 @@ export const Play = () => {
   const [panel, setPanel] = useState("def");
   const [formName, setFormName] = useState("def");
   const [inputValuesE, setInputValuesE] = useState({});
-    const [inputValuesS, setInputValuesS] = useState({});
+  const [inputValuesS, setInputValuesS] = useState({});
   const changePanel = (butName) => {
     setPanel(butName);
     

@@ -4,17 +4,17 @@ import birdImg from '../imagesPng/birdImg.png';
 import ConfettiExplosion from 'react-confetti-explosion';
 
 export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInputValuesE, setInputValuesS, inputValuesE, inputValuesS, setConfettiActive}) => {
-    const [isExploding, setIsExploding] = React.useState(false);
+    const [isExploding, setIsExploding] = useState(false);
     const imagesArray = [dogImg, birdImg];
-    const manejarCambioInputS = (evento, index) => {
+    const changeInputsManagementS = (evento, index) => {
         const newValue = evento.target.value;
         setInputValuesS((prevInputValue) => ({
             ...prevInputValue,
             [index]: newValue,
         }));
       };
-     
-      const manejarCambioInputE = (evento, index) => {
+    
+      const changeInputsManagementE = (evento, index) => {
         const newValue = evento.target.value;
         setInputValuesE((prevInputValue) => ({
             ...prevInputValue,
@@ -22,8 +22,6 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
         }));
       };
      
-     
-      
       function checkSpanishValues(){
         if(formName == "Español"){
            
@@ -64,6 +62,7 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
         };
        
       };
+      
     function changeQuestions(formName){
         const questions = formName === 'Español' ? sQuestions : eQuestions;
         const inputValues = formName === 'Español' ? inputValuesS : inputValuesE;
@@ -80,14 +79,13 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
                 <input
                   type='text'
                   value={inputValues[question.id] || ''}
-                  onChange={(e) => (formName === 'Español' ? manejarCambioInputS(e, question.id) : manejarCambioInputE(e, question.id))}
+                  onChange={(e) => (formName === 'Español' ? changeInputsManagementS(e, question.id) : changeInputsManagementE(e, question.id))}
                 />
                 {inputValues[question.id] === question.respuesta ? 'good' : 'x'}
               </div>
             </div>
           ));
-
-
     };
+
   return { changeQuestions, checkSpanishValues};
 }
