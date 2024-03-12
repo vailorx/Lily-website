@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import dogImg from '../imagesPng/dogImg.png';
 import birdImg from '../imagesPng/birdImg.png';
+import catImg from '../imagesPng/cat.png';
+import cowImg from '../imagesPng/cow.png';
+import spongebobImg from '../imagesPng/spongebob.png';
+import dogImg2 from '../imagesPng/dogImg2.png';
 import ConfettiExplosion from 'react-confetti-explosion';
 
-export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInputValuesE, setInputValuesS, inputValuesE, inputValuesS, setConfettiActive}) => {
+export const useQuestionsManagement = ({sQuestions, 
+  formName, 
+  eQuestions, 
+  setInputValuesE, 
+  setInputValuesS, 
+  inputValuesE, 
+  inputValuesS, 
+  setConfettiActive, 
+  answerAllQuestion, 
+  setAnswerQuestions,
+  setError}) => {
     const [isExploding, setIsExploding] = useState(false);
-    const imagesArray = [dogImg, birdImg];
+    
+    const imagesArray = [dogImg, birdImg, catImg, cowImg, spongebobImg, dogImg2];
     const changeInputsManagementS = (evento, index) => {
         const newValue = evento.target.value;
         setInputValuesS((prevInputValue) => ({
@@ -13,6 +28,9 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
             [index]: newValue,
         }));
       };
+      useEffect(() => {
+
+      },[answerAllQuestion]);
     
       const changeInputsManagementE = (evento, index) => {
         const newValue = evento.target.value;
@@ -35,14 +53,19 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
 
             if (matchInputJsonS) {
                 console.log('Todos los valores son iguales a los labels');
+                setAnswerQuestions(true);
                 setConfettiActive(true);
+                setError(false);
                  setTimeout(() => {
-                setConfettiActive(false);
+                setConfettiActive("false");
                 }, 3000); 
-  
+                
                   
                
             } else {
+              setAnswerQuestions(false);
+              setConfettiActive(false);
+              setError(true);
                 console.log('No todos los valores son iguales a los labels');
             }
         } else {
@@ -55,8 +78,17 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
 
             if (matchInputJsonE) {
                 console.log('Todos los valores son iguales a los labels');
+                setAnswerQuestions(true);
+                setConfettiActive(true);
+                setError(false);
+                setTimeout(() => {
+               setConfettiActive(false);
+               }, 3000); 
                
             } else {
+              setAnswerQuestions(false);
+              setConfettiActive(false);
+              setError(true);
                 console.log('No todos los valores son iguales a los labels');
             }
         };
@@ -72,7 +104,7 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
                 <img
                   className='formImg'
                   src={imagesArray.find((img) => img.endsWith(question.imagen))}
-                  alt={`Imagen de la pregunta ${question.id}`}
+                  alt={`Imagen de la pregunta ${question.id} en la cual aparece: ${question.imagen}`}
                 />
               </div>
               <div>
@@ -81,10 +113,11 @@ export const useQuestionsManagement = ({sQuestions, formName, eQuestions, setInp
                   value={inputValues[question.id] || ''}
                   onChange={(e) => (formName === 'Español' ? changeInputsManagementS(e, question.id) : changeInputsManagementE(e, question.id))}
                 />
-                {inputValues[question.id] === question.respuesta ? 'good' : 'x'}
+                {inputValues[question.id] === question.respuesta ? answerAllQuestion?'✅': '❓' : '❓'}
               </div>
             </div>
           ));
+          
     };
 
   return { changeQuestions, checkSpanishValues};

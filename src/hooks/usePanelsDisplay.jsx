@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const usePanelsDisplay = (panelName, formName, setNumClicks, numClicks, setFormName, setInputValuesE, setInputValuesS) => {
+export const usePanelsDisplay = (panelName, formName, setNumClicks, numClicks, setFormName, setInputValuesE, setInputValuesS, setAnswerAllQuestion, setConfettiActive) => {
   function changeFormName(){
     panelName(formName);
     setFormName(formName);
@@ -8,6 +8,8 @@ export const usePanelsDisplay = (panelName, formName, setNumClicks, numClicks, s
     changeFormNameDefault();
     setInputValuesE({});
     setInputValuesS({}); 
+    setAnswerAllQuestion(false);
+    setConfettiActive(false);
   
     
   }

@@ -2,39 +2,33 @@
   
     {
       "id": 1,
-      "pregunta": "¿Cuál es la capital de Francia?",
-      "respuesta": "París",
+      "respuesta": "Perro",
       "imagen": "dogImg.png"
     },
     {
       "id": 2,
-      "pregunta": "¿En qué año se fundó Google?",
-      "respuesta": "1998",
-      "imagen": "dogImg.png"
+      "respuesta": "Pájaro",
+      "imagen": "birdImg.png"
     },
     {
       "id": 3,
-      "pregunta": "¿Cuál es la capital de Francia?",
-      "respuesta": "París",
-      "imagen": "dogImg.png"
+      "respuesta": "Gato",
+      "imagen": "cat.png"
     },
     {
       "id": 4,
-      "pregunta": "¿En qué año se fundó Google?",
-      "respuesta": "1998",
-      "imagen": "dogImg.png"
+      "respuesta": "Vaca",
+      "imagen": "cow.png"
     }
     ,
     {
       "id": 5,
-      "pregunta": "¿Cuál es la capital de Francia?",
-      "respuesta": "París",
-      "imagen": "dogImg.png"
+      "respuesta": "Esponja",
+      "imagen": "spongebob.png"
     },
     {
       "id": 6,
-      "pregunta": "¿En qué año se fundó Google?",
-      "respuesta": "1998",
-      "imagen": "dogImg.png"
+      "respuesta": "Perro",
+      "imagen": "dogImg2.png"
     }
   ]

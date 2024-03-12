@@ -1,15 +1,34 @@
 [
   
-    {
-      "id": 1,
-      "pregunta": "¿Cuál es la capital de Francia?",
-      "respuesta": "Hola",
-      "imagen": "birdImg.png"
-    },
-    {
-      "id": 2,
-      "pregunta": "¿En qué año se fundó Google?",
-      "respuesta": "1998",
-      "imagen": "birdImg.png"
-    }
-  ]
+  {
+    "id": 1,
+    "respuesta": "Dog",
+    "imagen": "dogImg.png"
+  },
+  {
+    "id": 2,
+    "respuesta": "Bird",
+    "imagen": "birdImg.png"
+  },
+  {
+    "id": 3,
+    "respuesta": "Cat",
+    "imagen": "cat.png"
+  },
+  {
+    "id": 4,
+    "respuesta": "Cow",
+    "imagen": "cow.png"
+  }
+  ,
+  {
+    "id": 5,
+    "respuesta": "Sponge",
+    "imagen": "spongebob.png"
+  },
+  {
+    "id": 6,
+    "respuesta": "Dog",
+    "imagen": "dogImg2.png"
+  }
+]

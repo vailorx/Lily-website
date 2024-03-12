@@ -14,6 +14,11 @@ export const Play = () => {
   const [formName, setFormName] = useState("def");
   const [inputValuesE, setInputValuesE] = useState({});
   const [inputValuesS, setInputValuesS] = useState({});
+  const [answerAllQuestion, setAnswerAllQuestion] = useState(false);
+  const [confettiActive, setConfettiActive] = useState(false);
+  const setAnswerQuestions = (value) => {
+    setAnswerAllQuestion(value);
+  }
   const changePanel = (butName) => {
     setPanel(butName);
     
@@ -43,11 +48,11 @@ export const Play = () => {
       
           
       <div className='divFormBut'>
-      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
-      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
+      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} setConfettiActive={setConfettiActive}/>
+      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} setConfettiActive={setConfettiActive}/>
       
       </div>
-      <FormPanel panel={panel} formName={formName} inputValuesE={inputValuesE} inputValuesS={inputValuesS} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE}/>
+      <FormPanel panel={panel} formName={formName} inputValuesE={inputValuesE} inputValuesS={inputValuesS} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} answerAllQuestion={answerAllQuestion} setConfettiActive={setConfettiActive} confettiActive={confettiActive}/>
       
 
       
