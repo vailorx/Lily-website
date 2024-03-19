@@ -16,6 +16,7 @@ export const Play = () => {
   const [inputValuesS, setInputValuesS] = useState({});
   const [answerAllQuestion, setAnswerAllQuestion] = useState(false);
   const [confettiActive, setConfettiActive] = useState(false);
+  const [comprobarActive, setComprobarActive] = useState(false);
   const setAnswerQuestions = (value) => {
     setAnswerAllQuestion(value);
   }
@@ -48,11 +49,41 @@ export const Play = () => {
       
           
       <div className='divFormBut'>
-      <FormBut formName={"Español"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} setConfettiActive={setConfettiActive}/>
-      <FormBut formName={"Ingles"} panelName={changePanel} panel={panel} setFormName={setFormName} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} setConfettiActive={setConfettiActive}/>
+      <FormBut 
+      formName={"Español"} 
+      panelName={changePanel} 
+      panel={panel} 
+      setFormName={setFormName} 
+      setInputValuesS={setInputValuesS} 
+      setInputValuesE={setInputValuesE} 
+      setAnswerAllQuestion={setAnswerAllQuestion} 
+      setConfettiActive={setConfettiActive}
+      setComprobarActive={setComprobarActive}/>
+      <FormBut 
+      formName={"Ingles"} 
+      panelName={changePanel} 
+      panel={panel} 
+      setFormName={setFormName} 
+      setInputValuesS={setInputValuesS} 
+      setInputValuesE={setInputValuesE} 
+      setAnswerAllQuestion={setAnswerAllQuestion} 
+      setConfettiActive={setConfettiActive}
+      setComprobarActive={setComprobarActive}/>
       
       </div>
-      <FormPanel panel={panel} formName={formName} inputValuesE={inputValuesE} inputValuesS={inputValuesS} setInputValuesS={setInputValuesS} setInputValuesE={setInputValuesE} setAnswerAllQuestion={setAnswerAllQuestion} answerAllQuestion={answerAllQuestion} setConfettiActive={setConfettiActive} confettiActive={confettiActive}/>
+      <FormPanel 
+      panel={panel} 
+      formName={formName} 
+      inputValuesE={inputValuesE} 
+      inputValuesS={inputValuesS} 
+      setInputValuesS={setInputValuesS} 
+      setInputValuesE={setInputValuesE} 
+      setAnswerAllQuestion={setAnswerAllQuestion} 
+      answerAllQuestion={answerAllQuestion} 
+      setConfettiActive={setConfettiActive} 
+      confettiActive={confettiActive}
+      comprobarActive={comprobarActive}
+      setComprobarActive={setComprobarActive}/>
       
 
       

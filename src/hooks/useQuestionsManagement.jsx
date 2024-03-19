@@ -5,7 +5,6 @@ import catImg from '../imagesPng/cat.png';
 import cowImg from '../imagesPng/cow.png';
 import spongebobImg from '../imagesPng/spongebob.png';
 import dogImg2 from '../imagesPng/dogImg2.png';
-import ConfettiExplosion from 'react-confetti-explosion';
 
 export const useQuestionsManagement = ({sQuestions, 
   formName, 
@@ -17,7 +16,9 @@ export const useQuestionsManagement = ({sQuestions,
   setConfettiActive, 
   answerAllQuestion, 
   setAnswerQuestions,
-  setError}) => {
+  setError,
+  comprobarActive, 
+  setComprobarActive}) => {
     const [isExploding, setIsExploding] = useState(false);
     
     const imagesArray = [dogImg, birdImg, catImg, cowImg, spongebobImg, dogImg2];
@@ -30,7 +31,7 @@ export const useQuestionsManagement = ({sQuestions,
       };
       useEffect(() => {
 
-      },[answerAllQuestion]);
+      },[comprobarActive]);
     
       const changeInputsManagementE = (evento, index) => {
         const newValue = evento.target.value;
@@ -41,6 +42,7 @@ export const useQuestionsManagement = ({sQuestions,
       };
      
       function checkSpanishValues(){
+        setComprobarActive(true);
         if(formName == "Español"){
            
             //check every input with his json answer
@@ -49,7 +51,6 @@ export const useQuestionsManagement = ({sQuestions,
                 (question) => inputValuesS[question.id] == question.respuesta
                 
             );
-            console.log(matchInputJsonS);
 
             if (matchInputJsonS) {
                 console.log('Todos los valores son iguales a los labels');
@@ -113,7 +114,7 @@ export const useQuestionsManagement = ({sQuestions,
                   value={inputValues[question.id] || ''}
                   onChange={(e) => (formName === 'Español' ? changeInputsManagementS(e, question.id) : changeInputsManagementE(e, question.id))}
                 />
-                {inputValues[question.id] === question.respuesta ? answerAllQuestion?'✅': '❓' : '❓'}
+                {inputValues[question.id] === question.respuesta ? (comprobarActive ? '✅' : '❓') : '❓'}
               </div>
             </div>
           ));

@@ -1,7 +1,19 @@
 import {React, useState} from 'react';
 import {useQuestionsManagement} from '../hooks/useQuestionsManagement';
 import ConfettiExplosion from 'react-confetti-explosion';
-export const QuestionsComponent = ({sQuestions, formName, eQuestions, setInputValuesE, setInputValuesS, inputValuesE, inputValuesS, answerAllQuestion, setAnswerQuestions, confettiActive, setConfettiActive}) => { 
+export const QuestionsComponent = ({sQuestions, 
+    formName, 
+    eQuestions, 
+    setInputValuesE, 
+    setInputValuesS, 
+    inputValuesE, 
+    inputValuesS, 
+    answerAllQuestion, 
+    setAnswerQuestions, 
+    confettiActive, 
+    setConfettiActive, 
+    comprobarActive,
+    setComprobarActive}) => { 
    const [error, setError] = useState(false);
    const {changeQuestions, checkSpanishValues} = useQuestionsManagement(
     {sQuestions, 
@@ -14,10 +26,14 @@ export const QuestionsComponent = ({sQuestions, formName, eQuestions, setInputVa
     setConfettiActive,
     answerAllQuestion,
     setAnswerQuestions,
-    setError});
+    setError, 
+    comprobarActive, 
+    setComprobarActive});
     const closeErrorMessage = () => {
         setError(false);
+        
     }
+
 
 return(
     <div className='formPanelSpace'>
@@ -26,7 +42,7 @@ return(
         
         {confettiActive && <ConfettiExplosion 
           particleCount={1000} 
-          height={4000}  
+          height={6000}  
           width={4000}
           duration={5000}
           />}

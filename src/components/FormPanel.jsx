@@ -6,7 +6,18 @@ import englishQuestion from '../data/englishQuestion.json'
 import { QuestionsComponent } from './QuestionsComponent';
 import { ChangeButton } from '../imagesSvg/ChangeButton';
 
-export const FormPanel = ({panel, formName, setInputValuesE, setInputValuesS, inputValuesE, inputValuesS, setAnswerAllQuestion, answerAllQuestion, setConfettiActive, confettiActive}) => {
+export const FormPanel = ({panel, 
+  formName, 
+  setInputValuesE, 
+  setInputValuesS, 
+  inputValuesE, 
+  inputValuesS, 
+  setAnswerAllQuestion, 
+  answerAllQuestion, 
+  setConfettiActive, 
+  confettiActive,
+  comprobarActive,
+  setComprobarActive}) => {
   const [randomSpanishQuestions, setRandomSpanishQuestions] = useState([]);
   const [randomEnglishQuestions, setRandomEnglishQuestions] = useState([]);
 
@@ -32,6 +43,7 @@ export const FormPanel = ({panel, formName, setInputValuesE, setInputValuesS, in
     setAnswerAllQuestion(false);
     setClicks((prevClick) => prevClick+1);
     setConfettiActive(false);
+    setComprobarActive(false)
   }
   useEffect(() => {
     shuffleEnglishJSON(englishQuestion);
@@ -65,7 +77,9 @@ Ayuda a Lily a nombrar estos animales / personajes
         setConfettiActive={setConfettiActive}
         confettiActive={confettiActive}
         answerAllQuestion={answerAllQuestion}
-        setAnswerQuestions={setAnswerAllQuestion}/>
+        setAnswerQuestions={setAnswerAllQuestion}
+        comprobarActive={comprobarActive}
+        setComprobarActive={setComprobarActive}/>
         
 
         
